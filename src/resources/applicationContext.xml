@@ -8,14 +8,14 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- ************************************************************************************** -->
-    <bean id="Melee" class="springhw.beans.Characters" factory-method="getCharacters" >
+    <bean id="Melee" class="springhw.beans.Characters" factory-method="getCharacters"  scope="prototype">
         <constructor-arg name="role" value="Melee"/>
     </bean>
-    <bean id="Range" class="springhw.beans.Characters" factory-method="getCharacters" >
+    <bean id="Range" class="springhw.beans.Characters" factory-method="getCharacters" scope="prototype">
         <constructor-arg name="role" value="Range"/>
     </bean>
 
-    <bean id="Tank" class="springhw.beans.Characters" factory-method="getCharacters" >
+    <bean id="Tank" class="springhw.beans.Characters" factory-method="getCharacters" scope="prototype">
         <constructor-arg name="role" value="Tank"/>
     </bean>
 </beans>
