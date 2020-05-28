@@ -9,7 +9,7 @@ public class Printer {
     public static void print_all (Characters[] data){
         for (int i = 0; i < data.length; i++)
         {
-            System.out.println(data[i]);
+            System.out.println(i + ". " + data[i]);
         }
         System.out.println();
     }
@@ -20,7 +20,7 @@ public class Printer {
     }
 
     public static void ptint_for_user (Characters[] data){
-        System.out.println("Specify the position from 0 to " + data.length);
+        System.out.println("Specify the position from 0 to " + (data.length - 1));
         System.out.print("> ");
         Scanner in = new Scanner(System.in);
         Byte pos_number;
