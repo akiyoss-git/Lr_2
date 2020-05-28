@@ -37,34 +37,7 @@ public class App {
                     break;
             }
         } while (choose != 4);
-        /*
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------
-
-        // Примеры Жевнерчука:
-		
-		// Создаем контекст приложения из xml файла("src/main/resources/applicationContext.xml")
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
-        
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------
-        
-        // Считываем бины (объекты) и печатаем их в консоль
-        System.out.println(ctx.getBean("Melee", Characters.class));
-        System.out.println(ctx.getBean("Range", Characters.class));
-        
-           // Можете посмотреть в консоли, что два раза напечатан один и тот же объект с id=="thirdBean", потому что у него по умолчанию scope == "singleton"
-           // Смотрите код ссылки на метод toString, которая выводится в конце каждой строчки. Они одинаковые   
-        System.out.println(ctx.getBean("Range", Characters.class));
-        System.out.println(ctx.getBean("Tank", Characters.class));
-        
-           // Можете посмотреть в консоли, что по одному разу напечатаны две разных копии бина с id=="fourthBean", потому что у него установлен scope == "prototype"
-           // Смотрите код ссылки на метод toString, которая выводится в конце каждой строчки. Они разные
-        System.out.println(ctx.getBean("Tank", Characters.class));
-        System.out.println(ctx.getBean("Tank", Characters.class));
-
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------
-        
-        // Закрываем контекст приложения 
-        ctx.close();*/
-	}
+                
+    }
 
 }
