@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="springhw.component"/>
+
     <!-- ************************************************************************************** -->
     <bean id="Melee" class="springhw.beans.Characters" factory-method="getCharacters"  scope="prototype">
         <constructor-arg name="role" value="Melee"/>
@@ -17,8 +19,5 @@
 
     <bean id="Tank" class="springhw.beans.Characters" factory-method="getCharacters" scope="prototype">
         <constructor-arg name="role" value="Tank"/>
-    </bean>
-
-    <bean id="Parser" class="springhw.Parser">
     </bean>
 </beans>

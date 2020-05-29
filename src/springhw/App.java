@@ -2,7 +2,7 @@ package springhw;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.beans.*;
-import springhw.*;
+import springhw.component.Parser;
 
 import java.util.Scanner;
 
@@ -10,14 +10,10 @@ public class App {
 
 	public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
-
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter the filename: ");
-        String filename = in.next();
         Parser parser = ctx.getBean("Parser", Parser.class);
         ctx.close();
-        parser.setFilename(filename);
         Characters[] data = parser.parse();
+        System.out.println(data);
         if (data == null) {
             return;
         }
@@ -39,7 +35,6 @@ public class App {
                     break;
             }
         } while (choose != 4);
-                
     }
 
 }
