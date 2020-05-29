@@ -17,7 +17,6 @@ public class Parser {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
         try
         {
-            System.out.println(this.filename);
             FileReader reader = new FileReader(this.filename);
             BufferedReader breader = new BufferedReader(reader);
             StringBuilder sb = new StringBuilder();
