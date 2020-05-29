@@ -22,22 +22,21 @@ public class Parser {
     public Characters[] parse() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
         ArrayList<Characters> al = new ArrayList<>();
-        Integer j = 0;
         this.props.forEach((i, map) -> {
                     if (map.get("type").equals("tank")) {
                         Characters chars = ctx.getBean("Tank", Characters.class);
                         chars.setName(map.get("name"));
-                        al.add(j, chars);
+                        al.add(chars);
                     } else {
                         if (map.get("type").equals("range")) {
                             Characters chars = ctx.getBean("Range", Characters.class);
                             chars.setName(map.get("name"));
-                            al.add(j, chars);
+                            al.add(chars);
                         } else {
                             if (map.get("type").equals("melee")) {
                                 Characters chars = ctx.getBean("Melee", Characters.class);
                                 chars.setName(map.get("name"));
-                                al.add(j, chars);
+                                al.add(chars);
                             } else {
                                 al.add(null);
                             }
