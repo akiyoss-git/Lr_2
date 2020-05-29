@@ -6,7 +6,10 @@ import springhw.beans.*;
 
 public class Parser {
     private String filename;
-    public Parser(String filename) {
+    public Parser() {
+    }
+
+    public void setFilename(String filename) {
         this.filename = filename;
     }
 
@@ -14,6 +17,7 @@ public class Parser {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
         try
         {
+            System.out.println(this.filename);
             FileReader reader = new FileReader(this.filename);
             BufferedReader breader = new BufferedReader(reader);
             StringBuilder sb = new StringBuilder();

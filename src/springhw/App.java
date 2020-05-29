@@ -9,12 +9,14 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) {
-
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
 
         Scanner in = new Scanner(System.in);
         System.out.print("Enter the filename: ");
         String filename = in.next();
-        Parser parser = new Parser(filename);
+        Parser parser = ctx.getBean("Parser", Parser.class);
+        ctx.close();
+        parser.setFilename(filename);
         Characters[] data = parser.parse();
         if (data == null) {
             return;
